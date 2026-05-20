@@ -1,0 +1,205 @@
+/* ============================================
+   Button Component Styles
+   ============================================ */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: var(--font-medium);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+/* ========================
+   Variants
+   ======================== */
+
+/* Primary */
+.btn--primary {
+  background: var(--gradient-primary);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+
+.btn--primary:hover:not(:disabled) {
+  box-shadow: var(--shadow-glow), 0 4px 16px rgba(34, 197, 94, 0.25);
+}
+
+.btn--primary:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-bg);
+}
+
+/* Secondary */
+.btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+  border-color: var(--color-surface-hover);
+}
+
+.btn--secondary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+
+/* Outline */
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--outline:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.btn--outline:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-bg);
+}
+
+/* Danger */
+.btn--danger {
+  background: var(--color-danger);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: #dc2626;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2), 0 4px 16px rgba(239, 68, 68, 0.25);
+}
+
+.btn--danger:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-danger-bg);
+}
+
+/* ========================
+   Sizes
+   ======================== */
+
+.btn--sm {
+  padding: 6px 12px;
+  font-size: var(--text-sm);
+  gap: var(--space-1);
+}
+
+.btn--md {
+  padding: 10px 20px;
+  font-size: var(--text-base);
+  gap: var(--space-2);
+}
+
+.btn--lg {
+  padding: 14px 28px;
+  font-size: var(--text-lg);
+  gap: var(--space-3);
+}
+
+/* ========================
+   States
+   ======================== */
+
+/* Hover & Active transforms */
+.btn:hover:not(:disabled) {
+  transform: scale(1.02);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Disabled */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Full Width */
+.btn--full-width {
+  width: 100%;
+}
+
+/* ========================
+   Icon
+   ======================== */
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.btn--sm .btn__icon {
+  font-size: var(--text-sm);
+}
+
+.btn--md .btn__icon {
+  font-size: var(--text-base);
+}
+
+.btn--lg .btn__icon {
+  font-size: var(--text-lg);
+}
+
+/* ========================
+   Loading State
+   ======================== */
+
+.btn--loading {
+  pointer-events: none;
+}
+
+.btn--loading .btn__content {
+  visibility: hidden;
+}
+
+.btn__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Adjust spinner border color for secondary and outline variants */
+.btn--secondary .btn__spinner {
+  border-color: rgba(148, 163, 184, 0.25);
+  border-top-color: var(--color-text-secondary);
+}
+
+.btn--outline .btn__spinner {
+  border-color: rgba(148, 163, 184, 0.25);
+  border-top-color: var(--color-text-secondary);
+}
+
+.btn__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: inherit;
+}

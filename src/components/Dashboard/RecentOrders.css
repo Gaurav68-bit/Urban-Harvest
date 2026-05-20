@@ -1,0 +1,163 @@
+/* ============================================
+   RecentOrders Component Styles
+   ============================================ */
+
+.recent-orders {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  animation: fadeIn var(--transition-slow) ease forwards;
+}
+
+/* ========================
+   Header
+   ======================== */
+.recent-orders__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.recent-orders__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.recent-orders__view-all {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-medium);
+  transition: color var(--transition-base);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.recent-orders__view-all:hover {
+  color: var(--color-primary-light);
+}
+
+/* ========================
+   Table Wrapper
+   ======================== */
+.recent-orders__table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* ========================
+   Table
+   ======================== */
+.recent-orders__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-orders__table thead {
+  background: var(--color-bg-tertiary);
+}
+
+.recent-orders__table th {
+  padding: 12px 16px;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.recent-orders__table th:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.recent-orders__table th:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.recent-orders__table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-base);
+}
+
+.recent-orders__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.recent-orders__table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.recent-orders__table td {
+  padding: 16px;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+/* Cell Variants */
+.recent-orders__order-id {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-weight: var(--font-medium);
+  color: var(--color-primary);
+}
+
+.recent-orders__customer {
+  font-weight: var(--font-medium);
+}
+
+.recent-orders__items {
+  color: var(--color-text-secondary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-orders__total {
+  font-weight: var(--font-semibold);
+}
+
+.recent-orders__date {
+  color: var(--color-text-muted);
+}
+
+/* ========================
+   Empty State
+   ======================== */
+.recent-orders__empty {
+  padding: var(--space-12) var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* ========================
+   Responsive — Mobile
+   ======================== */
+@media (max-width: 768px) {
+  .recent-orders {
+    padding: var(--space-4);
+  }
+
+  .recent-orders__table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .recent-orders__table .col-items,
+  .recent-orders__table .col-date {
+    display: none;
+  }
+
+  .recent-orders__table td,
+  .recent-orders__table th {
+    padding: 12px 10px;
+  }
+}

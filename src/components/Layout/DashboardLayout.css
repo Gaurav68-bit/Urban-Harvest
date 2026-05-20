@@ -1,0 +1,39 @@
+/* ============================================
+   DashboardLayout Component Styles
+   ============================================ */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-layout__main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboard-layout__content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--color-bg-primary);
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 1024px) {
+  .dashboard-layout__main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout__content {
+    padding: 16px;
+  }
+}

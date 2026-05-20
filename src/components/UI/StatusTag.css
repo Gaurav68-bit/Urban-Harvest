@@ -1,0 +1,61 @@
+/* ============================================
+   StatusTag Component Styles
+   ============================================ */
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  transition: all var(--transition-base);
+}
+
+/* Dot indicator */
+.status-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========================
+   Color Variants
+   ======================== */
+
+/* Green — Delivered, Available */
+.status-tag--green {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.status-tag--green .status-tag__dot {
+  background-color: var(--color-success);
+}
+
+/* Amber — In Transit, Preparing */
+.status-tag--amber {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.status-tag--amber .status-tag__dot {
+  background-color: var(--color-warning);
+}
+
+/* Red — Cancelled, Out of Stock */
+.status-tag--red {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.status-tag--red .status-tag__dot {
+  background-color: var(--color-danger);
+}
